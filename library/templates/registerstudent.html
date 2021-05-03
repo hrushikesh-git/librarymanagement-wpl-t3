@@ -1,0 +1,31 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+
+{% if error %}
+<script>alert('Username already Exists')</script>
+{% endif %}
+<div class="container" style="width: 500px;margin-left: 400px;background-color: black;"> 
+<center>
+    <h3 align="center" style="background-color:#a08dd3;color:white">Register Student</h3>
+    <table>
+        <tr>
+            <td>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <h4 style="color: white;">First Name </h4><input type="text" name="firstname" placeholder=" Enter firstName"><br>
+                    <h4 style="color: white;" >Last Name </h4> <input type="text" name="lastname" placeholder="lastname"><br>
+                    <h4 style="color: white;" >EnrollmentNo</h4> <input type="text" name="enroll" placeholder="EnrollNo" ><br>
+                    <h4 style="color: white;" >Branch </h4><input type="text" name="branch" placeholder="Branch"><br>
+                    <h4 style="color: white;" >User Name</h4><input type="text" name="username" placeholder="username"><br>
+                    <h4 style="color: white;" >Password</h4><input type="password" name="password" placeholder="password"><br><br>
+                    <input type="submit" value="Submit" class="btn btn-outline-light">  
+                </form>
+            </td>
+         </tr>
+    </table>
+
+</center>
+</div>
+
+{% endblock %}
